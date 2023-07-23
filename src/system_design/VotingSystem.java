@@ -1,6 +1,7 @@
+package system_design;
+
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 public class VotingSystem {
 
