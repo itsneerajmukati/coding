@@ -27,8 +27,13 @@ public class NextGreaterFrequency {
             result[i]= stack.isEmpty()?-1:stack.peek();
             stack.push(arr[i]);
         }
-        App.printArray(result);
+        printArray(result);
         
     }
 
+    public static void printArray(int[] arr) {
+        for(int pointer=0;pointer<arr.length;pointer++) {
+            System.out.println(arr[pointer]);
+        }
+    }
 }

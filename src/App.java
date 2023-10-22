@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 
@@ -24,13 +25,13 @@ public class App {
      
     for(int i = 0 ;i < s.length(); i++)
     {
-        System.out.println(i+"i");
+        //System.out.println(i+"i");
         char ch = s.charAt(i);
         String left_substr = s.substring(0, i);
         
         String right_substr = s.substring(i + 1);
         String rest = left_substr + right_substr;
-        System.out.println("rest"+rest);
+        //System.out.println("rest"+rest);
         permute(rest, answer + ch);
     }
 }
