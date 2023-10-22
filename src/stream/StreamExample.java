@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamExample {
@@ -17,7 +16,7 @@ public class StreamExample {
         employees.add(employee1);
         employees.add(employee2);
         employees.add(employee3);
-        groupByAndMaxBySalary(employees);
+        filter(employees);
         
     }
     private static void max(List<Employee> employees) {
@@ -61,6 +60,16 @@ public class StreamExample {
         Map<String, Optional<Employee>> employeesByDepartment = employees.stream()
         .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparingInt(Employee::getSalary))));
         employeesByDepartment.forEach( (k,v) -> {System.out.println(k +":"+v.get().getName());});
+    }
+
+    private static void map(List<Employee> employees) {
+        List<String> result = employees.stream().map(e -> e.getName()).collect(Collectors.toList());
+        System.out.println(result.toString());
+    }
+
+    private static void filter(List<Employee> employees) {
+        List<Employee> result = employees.stream().filter(e -> (e.getSalary()>50 && e.getDepartment().equals("D2"))).collect(Collectors.toList());
+        System.out.println(result.toString());
     }
 }
 
