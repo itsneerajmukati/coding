@@ -1,9 +1,5 @@
 package backtracking;
 
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
 class TugOfWar
 {
 	public int min_diff;
@@ -124,5 +120,5 @@ class TugOfWar
 	}
 }
 
-// This code is contributed by Chhavi
+
 
