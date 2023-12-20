@@ -1,22 +1,27 @@
 package stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StreamExample {
     public static void main(String[] args) {
-        Employee employee1 = new Employee("E1", 1, 100,"D1");
-        Employee employee2 = new Employee("E2", 2, 200,"D1");
-        Employee employee3 = new Employee("E3", 3, 50,"D2");
-        List<Employee> employees = new ArrayList<>();
-        employees.add(employee1);
-        employees.add(employee2);
-        employees.add(employee3);
-        filter(employees);
+
+               
+        // Employee employee1 = new Employee("E1", 1, 100,"D1");
+        // Employee employee2 = new Employee("E2", 2, 200,"D1");
+        // Employee employee3 = new Employee("E3", 3, 50,"D2");
+        // List<Employee> employees = new ArrayList<>();
+        // employees.add(employee1);
+        // employees.add(employee2);
+        // employees.add(employee3);
+        // filter(employees);
         
     }
     private static void max(List<Employee> employees) {
@@ -46,7 +51,8 @@ public class StreamExample {
     }
 
     private static void groupBy(List<Employee> employees) {
-        Map<String, List<Employee>> employeesByDepartment = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        Map<String, List<Employee>> employeesByDepartment = employees.stream().
+        collect(Collectors.groupingBy(Employee::getDepartment));
         System.out.println(employeesByDepartment.toString());
     }
 
